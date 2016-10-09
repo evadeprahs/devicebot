@@ -3,10 +3,7 @@ const express = require('express')
 const Slapp = require('slapp')
 const BeepBoopConvoStore = require('slapp-convo-beepboop')
 const BeepBoopContext = require('slapp-context-beepboop')
-const Witbot = require('witbot')
 if (!process.env.PORT) throw Error('PORT missing but required')
-
-var witToken = Z3OMXNIJPZQFGH2VPXQMIM5V6RSSQ2VP
 
 var slapp = Slapp({
   convo_store: BeepBoopConvoStore(),
@@ -14,7 +11,6 @@ var slapp = Slapp({
 })
 
 var app = slapp.attachToExpress(express())
-var witbot = Witbot(witToken)
 
 // messages
 slapp.message('.*', (msg, text, match1) => {
