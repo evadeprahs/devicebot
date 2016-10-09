@@ -1,14 +1,11 @@
 'use strict'
-const express = require('express');
-const Slapp = require('Slapp');
-const BeepBoopConvoStore = require('slapp-convo-beepboop')
+const express = require('express')
+const Slapp = require('Slapp')
+
 const BeepBoopContext = require('slapp-context-beepboop')
 if (!process.env.PORT) throw Error('PORT missing but required')
 
-var slapp = Slapp({
-    convo_store: BeepBoopConvoStore(),
-    context: BeepBoopContext()
-})
+var slapp = Slapp({ context: BeepBoopContext() })
 
 // attach handlers to an Express app
 var app = slapp.attachToExpress(express())
@@ -17,10 +14,6 @@ slapp.message('^(hi|hello|hey).*', ['direct_mention', 'direct_message'], (msg, t
   msg
     .say(`${greeting}, how are you?`)
     .route('handleHowAreYou')  // where to route the next msg in the conversation
-})
-
-app.get('/', function(req,res){
-   res.send('Hello') 
 })
 
 // register a route handler
