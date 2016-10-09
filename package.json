@@ -18,8 +18,10 @@
   "homepage": "https://github.com/isobar-dsharpe/devicebot",
   "dependencies": {
     "express": "^4.14.0",
+    "node-wit": "^4.1.0",
     "slapp": "^1.2.0",
     "slapp-context-beepboop": "^1.1.0",
-    "slapp-convo-beepboop": "^1.0.0"
+    "slapp-convo-beepboop": "^1.0.0",
+    "witbot": "^2.1.0"
   }
 }
