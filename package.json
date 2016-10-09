@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/isobar-dsharpe/devicebot/issues"
   },
-  "homepage": "https://github.com/isobar-dsharpe/devicebot"
+  "homepage": "https://github.com/isobar-dsharpe/devicebot",
+  "dependencies": {
+    "express": "^4.14.0",
+    "slapp": "^1.2.0"
+  }
 }
